@@ -1,0 +1,5 @@
+---
+# tasks file for vim
+- name: Install vim
+  include_role:
+    name: generic_program_install

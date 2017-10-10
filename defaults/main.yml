@@ -1,0 +1,9 @@
+---
+# defaults file for vim
+config:
+  directory:
+  git_repo:
+
+program:
+  name: vim
+  packages: neovim
