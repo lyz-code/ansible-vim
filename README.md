@@ -4,7 +4,7 @@ Install vim, based on [this generic role](https://git.fok.systems/ansible-roles/
 
 ## Requirements
 
-`git` should be installed
+`git` and `pip` should be installed
 
 ## Role Variables
 * `program`    : Dictionary with the information of the program
@@ -19,12 +19,29 @@ Install vim, based on [this generic role](https://git.fok.systems/ansible-roles/
     the root of my vim configuration git repository I've got a directory called
     `.vim` and a `.vimrc` file.
 
+## Dependencies
+
+This role is based on [this one](https://git.fok.systems/ansible-roles/generic_program_install)
+
+Install it with:
+```bash
+ansible-galaxy install -r requirements.yml
+```
+
 ## Example playbook
 
 ```yaml
 - hosts: all
   roles:
     - vim
+```
+
+## Testing
+
+To test the role you need [molecule](http://molecule.readthedocs.io/en/latest/).
+
+```bash
+molecule test
 ```
 
 ## License

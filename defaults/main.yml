@@ -3,7 +3,3 @@
 config:
   directory:
   git_repo:
-
-program:
-  name: vim
-  packages: neovim

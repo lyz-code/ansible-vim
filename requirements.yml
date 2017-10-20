@@ -1,2 +1,4 @@
-- src: git+https://git.fok.systems/ansible-roles/generic_program_install
+- src: git+https://git.fok.systems/ansible-roles/generic_program_install.git
+  version: v0.1
+- src: git+https://git.fok.systems/ansible-roles/pip.git
   version: v0.1

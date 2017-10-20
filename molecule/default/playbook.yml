@@ -1,5 +1,14 @@
 ---
+- name: '[Pre task] Install pip'
+  hosts: all
+  roles:
+    - role: pip
+
 - name: Converge
   hosts: all
+  vars: 
+    config: 
+      directory: .rcfiles
+      git_repo: https://git.fok.systems/ansible-roles/test_dotfiles
   roles:
     - role: vim

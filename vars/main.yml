@@ -1,0 +1,5 @@
+---
+# vars file for vim
+program:
+  name: vim
+  packages: neovim
