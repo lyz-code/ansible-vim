@@ -8,6 +8,7 @@
   pip:
     name: neovim
     executable: /usr/bin/pip3
+    extra_args: --user
 
 - name: Make Nvim required symlinks
   file:
@@ -20,8 +21,8 @@
 
 - name: Install Vundle
   git:
-    repo: https://git.fok.systems/lyz/super_bash_prompt
-    dest: ~/.vim/bundle
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
 
 - name: Test if the plugins are already installed
   stat:
@@ -31,4 +32,4 @@
 
 - name: Install the plugins
   shell: vim +PluginInstall +qall
-  when: not vim_fugitive_path.stat.islnk
+  when: (vim_fugitive_path.stat.islnk is not defined ) or (not vim_fugitive_path.stat.islnk)

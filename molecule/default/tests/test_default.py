@@ -12,7 +12,7 @@ def test_vim_is_installed(host):
 
 
 @pytest.mark.parametrize("files", [
-    ('.vimrc'),
+    ('.test_programrc'),
     ('skeleton.md'),
     ('filetype.vim'),
     ('spellfile.add')
