@@ -6,8 +6,8 @@
 
 - name: Converge
   hosts: all
-  vars: 
-    config: 
+  vars:
+    config:
       directory: .rcfiles
       git_repo: https://git.fok.systems/ansible-roles/test_dotfiles
   roles:
