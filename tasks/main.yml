@@ -1,8 +1,5 @@
 ---
 # tasks file for vim
-- name: debug
-  debug:
-    var: install
 - name: Install neovim
   include_role:
     name: generic_program_install
