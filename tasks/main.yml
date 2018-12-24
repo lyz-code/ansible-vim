@@ -1,8 +1,14 @@
 ---
 # tasks file for vim
+- name: debug
+  debug:
+    var: install
 - name: Install neovim
   include_role:
     name: generic_program_install
+  vars:
+    install: "{{ neovim_install }}"
+    config: "{{ neovim_config }}"
 
 - name: Install neovim pip package (required by python-mode plugin)
   pip:
