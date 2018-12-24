@@ -38,6 +38,8 @@ ansible-galaxy install -r requirements.yml
 
 ## Testing
 
+**Note: Tests are broken because it needs to load the config from gitea**
+
 To test the role you need [molecule](http://molecule.readthedocs.io/en/latest/).
 
 ```bash
