@@ -1,0 +1,4 @@
+- src: git+http://gitea:3000/ansible_roles/pip
+  version: v0.1
+- src: git+http://gitea:3000/ansible_roles/generic_program_install
+  version: 1.1.0

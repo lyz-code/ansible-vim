@@ -1,2 +1,6 @@
 .*sw*
 .rope*
+__pycache__
+roles/
+.cache
+.molecule

@@ -1,0 +1,14 @@
+---
+# defaults file for vim
+neovim_install:
+  packages:
+    - neovim
+  pip_packages:
+  pip3_packages:
+    - neovim
+
+neovim_config:
+  directory: ~/.rcfiles
+  git_repo: git@gitea:rcfiles
+  packages:
+    - vim

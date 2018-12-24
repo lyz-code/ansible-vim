@@ -1,0 +1,39 @@
+---
+# tasks file for vim
+- name: Install neovim
+  include_role:
+    name: generic_program_install
+  vars:
+    install: "{{ neovim_install }}"
+    config: "{{ neovim_config }}"
+
+- name: Install neovim pip package (required by python-mode plugin)
+  pip:
+    name: neovim
+    executable: /usr/bin/pip3
+    extra_args: --user
+
+- name: Make Nvim required symlinks
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  with_items:
+    - {'src': ~/.vim, 'dest': ~/.config/nvim}
+    - {'src': ~/.vimrc, 'dest': ~/.config/nvim/init.vim}
+
+- name: Install Vundle
+  git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
+    version: master
+
+- name: Test if the plugins are already installed
+  stat:
+    path: ~/.vim/bundle/vim-fugitive
+  register: vim_fugitive_path
+  changed_when: false
+
+- name: Install the plugins
+  command: vim +PluginInstall +qall
+  when: (vim_fugitive_path.stat.islnk is not defined ) or (not vim_fugitive_path.stat.islnk)
