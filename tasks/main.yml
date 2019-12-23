@@ -18,6 +18,7 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     state: link
+    force: yes
   with_items:
     - {'src': ~/.vim, 'dest': ~/.config/nvim}
     - {'src': ~/.vimrc, 'dest': ~/.config/nvim/init.vim}
